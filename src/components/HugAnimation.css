@@ -1,0 +1,150 @@
+.hug-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+.hug-container {
+  width: 90%;
+  max-width: 380px;
+  background: var(--bg-primary);
+  border-radius: 24px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+  transform: scale(0.8) translateY(20px);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hug-container.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.hug-header {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hug-action-btn {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.15);
+  border: 3px solid white;
+  border-radius: 20px;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-text {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.hug-action-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.contact-info {
+  background: #2d2d2d;
+  border-radius: 24px;
+  padding: 12px 24px;
+  text-align: center;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-label {
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.hug-animation-area {
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  min-height: 200px;
+  justify-content: center;
+}
+
+.hand-icon {
+  animation: wave 1s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+.hug-message-box {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+}
+
+.message-label {
+  color: var(--text-secondary);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.hug-buttons {
+  padding: 16px 24px 24px;
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
+.hug-icon-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.hug-icon-btn.square {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+}
+
+.hug-icon-btn.dots {
+  background: #6b7aff;
+  color: white;
+}
+
+.hug-icon-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hug-icon-btn:active {
+  transform: translateY(0);
+}

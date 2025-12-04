@@ -1,0 +1,29 @@
+.settings-content {
+  padding: var(--spacing-md);
+}
+
+.settings-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.settings-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md);
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  transition: background-color var(--transition-fast);
+}
+
+.settings-item:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.settings-item-label {
+  font-size: 16px;
+  color: var(--text-primary);
+}

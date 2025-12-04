@@ -1,0 +1,124 @@
+@keyframes menuAppear {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.context-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message-context-menu {
+  position: fixed;
+  background: var(--bg-tertiary);
+  border-radius: 12px;
+  padding: 8px 0;
+  width: 280px;
+  max-width: calc(100% - 32px);
+  z-index: 1001;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: menuAppear 0.2s ease-out;
+  margin: auto;
+}
+
+.context-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  width: 100%;
+  border: none;
+  background: none;
+  color: var(--text-primary);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.context-menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateX(4px);
+}
+
+.context-menu-item.delete {
+  color: #ff4d4d;
+  margin-top: 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.context-menu-item.delete:hover {
+  background-color: rgba(255, 77, 77, 0.1);
+}
+
+.context-menu-icon {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .message-context-menu {
+    width: calc(100% - 24px);
+    padding: 4px 0;
+  }
+  
+  .context-menu-item {
+    padding: 10px 12px;
+    font-size: 13px;
+    gap: 10px;
+  }
+  
+  .context-menu-icon {
+    font-size: 16px;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .context-menu-item.delete {
+    margin-top: 2px;
+  }
+}

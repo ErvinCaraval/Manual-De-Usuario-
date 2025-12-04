@@ -1,0 +1,33 @@
+.floating-hint-wrapper {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.floating-hint {
+  background: var(--bg-elevated);
+  color: var(--text-primary); /* Cambiado para un contraste alto */
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600; /* Aumentado para mayor legibilidad */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  border: 1px solid var(--border-subtle);
+  white-space: nowrap;
+  
+  animation: hint-fade-in 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes hint-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

@@ -1,0 +1,149 @@
+.blocked-contact-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+
+.blocked-contact-dialog {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 360px;
+  animation: scaleUp 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+  overflow: hidden;
+}
+
+.blocked-dialog-header {
+  padding: 32px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.blocked-icon-large {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 8px;
+}
+
+.blocked-dialog-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.blocked-dialog-text {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.blocked-dialog-text strong {
+  color: #EF4444;
+  font-weight: 600;
+}
+
+.blocked-dialog-actions {
+  display: flex;
+  border-top: 1px solid var(--border-color);
+}
+
+.blocked-dialog-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.blocked-dialog-btn.secondary {
+  color: var(--text-secondary);
+  border-right: 1px solid var(--border-color);
+}
+
+.blocked-dialog-btn.unblock {
+  color: #10B981;
+}
+
+.blocked-dialog-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.blocked-dialog-btn:active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .blocked-contact-overlay {
+    padding: 16px;
+  }
+
+  .blocked-dialog-header {
+    padding: 24px 16px;
+    gap: 12px;
+  }
+
+  .blocked-icon-large {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 4px;
+  }
+
+  .blocked-dialog-title {
+    font-size: 18px;
+  }
+
+  .blocked-dialog-text {
+    font-size: 14px;
+  }
+
+  .blocked-dialog-actions {
+    flex-direction: column-reverse;
+  }
+
+  .blocked-dialog-btn {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .blocked-dialog-btn.secondary {
+    border-right: none;
+    border-top: 1px solid var(--border-color);
+  }
+}

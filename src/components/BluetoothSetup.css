@@ -1,0 +1,205 @@
+.bluetooth-setup {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: all var(--transition-slow);
+  overflow: hidden;
+}
+
+.bluetooth-setup.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.setup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding: 0 12px;
+  overflow-y: auto; 
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.setup-content::-webkit-scrollbar {
+  display: none;
+}
+
+.setup-header {
+  text-align: center;
+  padding-top: 8px;
+  animation: fadeIn var(--transition-slow) ease-out;
+  flex-shrink: 0;
+}
+
+.setup-title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 2px;
+}
+
+.setup-subtitle {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.network-visualization-large {
+  width: 180px;
+  height: 180px;
+  position: relative;
+  animation: fadeIn 0.8s ease-out 0.2s backwards;
+  flex-shrink: 0;
+}
+
+.network-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(var(--shadow-glow));
+}
+
+.network-line, .network-node, .center-node {
+  animation-iteration-count: infinite;
+}
+
+.network-line { animation-name: pulse; animation-duration: 2s; animation-timing-function: ease-in-out; }
+.network-node { animation-name: scaleIn; animation-duration: 0.6s; animation-timing-function: ease-out; animation-fill-mode: backwards; }
+.center-node { animation-name: pulse; animation-duration: 2s; animation-timing-function: ease-in-out; }
+
+.disabled { opacity: 0.3; animation: none; }
+.network-line.disabled { opacity: 0.2; }
+
+.bluetooth-status-card {
+  width: 100%;
+  max-width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: slideUp 0.6s ease-out 0.4s backwards;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  flex-shrink: 0;
+}
+
+.bluetooth-status-card.enabled {
+  border-color: var(--accent-primary);
+  background: rgba(0, 255, 136, 0.05);
+}
+
+.bluetooth-icon-large {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bluetooth-icon-large svg {
+    width: 24px;
+    height: 24px;
+}
+
+.bluetooth-status-card.enabled .bluetooth-icon-large {
+  background: rgba(0, 255, 136, 0.1);
+}
+
+.status-content {
+  text-align: center;
+}
+
+.status-content h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.status-content p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.bluetooth-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.bluetooth-features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  padding: 6px 8px;
+  background: rgba(0, 255, 136, 0.03);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(0, 255, 136, 0.08);
+}
+
+.bluetooth-features li svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 8px;
+}
+
+.success-message {
+  padding: 10px;
+}
+
+.success-message p {
+  font-size: 14px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(24px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

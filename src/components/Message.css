@@ -1,0 +1,9 @@
+@media (max-width: 480px) {
+  .message-container {
+    max-width: 90%;
+    padding: 0 8px;
+  }
+  .message-system {
+    max-width: 80%;
+  }
+}

@@ -1,0 +1,129 @@
+.network-people {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.network-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.network-panel {
+  background-color: var(--background-primary);
+  border-radius: 12px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  z-index: 1001;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.network-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.network-title {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  font-weight: bold;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.network-map-container {
+  position: relative;
+  height: 300px;
+  background-color: var(--background-secondary);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.network-map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.network-node {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  transition: all 2s ease-in-out; /* Slower and smoother animation */
+}
+
+.user-node {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background-color: var(--accent-primary);
+  border: 3px solid var(--background-primary);
+  z-index: 10;
+}
+
+.peer-node {
+  width: 45px;
+  height: 45px;
+  background-color: #4A90E2;
+  cursor: pointer;
+  border: 2px solid var(--background-secondary);
+}
+
+.peer-node.selected {
+  border-color: var(--accent-primary);
+  transform: scale(1.2);
+}
+
+.peer-label {
+  position: absolute;
+  bottom: -20px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  background-color: var(--background-primary);
+  padding: 2px 5px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.peer-node:hover .peer-label {
+  opacity: 1;
+}
+
+.network-footer-info {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.network-footer-info span {
+  font-weight: bold;
+  color: var(--text-primary);
+}
