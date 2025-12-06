@@ -100,7 +100,7 @@ const NotificationPermission = ({ onComplete }) => {
           <button className="btn btn-primary" onClick={() => handleAction('granted')} data-tour-target="notification-enable-btn">
             Activar notificaciones
           </button>
-          <button className="btn btn-secondary" onClick={() => handleAction('denied')}>
+          <button className="btn btn-secondary" onClick={() => handleAction('denied')} data-tour-target="notification-deny-btn">
             Ahora no
           </button>
         </div>

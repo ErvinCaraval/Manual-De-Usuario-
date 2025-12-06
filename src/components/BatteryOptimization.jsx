@@ -94,10 +94,10 @@ const BatteryOptimization = ({ onNext, showToast }) => {
           </button>
 
           <div className="secondary-actions">
-            <button className="btn btn-secondary" onClick={handleCheckAgain}>
+            <button className="btn btn-secondary" onClick={handleCheckAgain} data-tour-target="battery-check-btn">
               Verificar de nuevo
             </button>
-            <button className="btn btn-secondary" onClick={handleSkip}>
+            <button className="btn btn-secondary" onClick={handleSkip} data-tour-target="battery-skip-btn">
               Omitir por ahora
             </button>
           </div>

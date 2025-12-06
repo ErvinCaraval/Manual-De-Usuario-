@@ -1,8 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Shared.css';
 import './ChatBackgrounds.css';
+import { useManual } from './Manual/ManualContext';
 
 const ChatBackgrounds = ({ onBack }) => {
+  const { startTour } = useManual();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      startTour('chat-backgrounds');
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [startTour]);
+
   const backgrounds = [
     'https://i.pravatar.cc/400?img=1',
     'https://i.pravatar.cc/400?img=2',
@@ -20,14 +30,14 @@ const ChatBackgrounds = ({ onBack }) => {
   return (
     <div className="view-container">
       <div className="view-header">
-        <button className="back-button" onClick={onBack}>&lt; Atrás</button>
+        <button className="back-button" onClick={onBack} data-tour-target="backgrounds-back">&lt; Atrás</button>
         <h2 className="view-title">Fondos de Chat</h2>
       </div>
       <div className="menu-view-content">
-        <div className="backgrounds-grid">
+        <div className="backgrounds-grid" data-tour-target="backgrounds-grid">
           {backgrounds.map((bg, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={`background-item ${selectedBg === bg ? 'selected' : ''}`}
               onClick={() => setSelectedBg(bg)}
             >

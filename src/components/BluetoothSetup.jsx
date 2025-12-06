@@ -112,7 +112,7 @@ const BluetoothSetup = ({ onNext, showToast }) => {
               </svg>
             </button>
 
-            <button className="btn btn-secondary" onClick={handleSkip}>
+            <button className="btn btn-secondary" onClick={handleSkip} data-tour-target="bluetooth-skip-btn">
               Omitir
             </button>
           </div>

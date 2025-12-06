@@ -66,7 +66,7 @@ const FloatingMenu = ({
               <button className="dots-option-item" onClick={() => { handleAction(() => setCurrentView('chatBackgrounds'), 'Cargando fondos de chat...'); }} data-tour-target="menu-backgrounds">
                 <span className="dots-option-title">Fondos de chat</span>
               </button>
-              <button className="dots-option-item" onClick={() => { handleAction(() => { startTour('chat'); onClose(); }, 'Iniciando tutorial...'); }}>
+              <button className="dots-option-item" onClick={() => { handleAction(() => { startTour('chat'); onClose(); }, 'Iniciando tutorial...'); }} data-tour-target="menu-help">
                 <span className="dots-option-title">Ayuda y Tutorial</span>
               </button>
             </div>

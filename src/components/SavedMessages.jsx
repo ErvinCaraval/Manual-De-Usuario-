@@ -1,9 +1,19 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Shared.css';
 import './SavedMessages.css';
+import { useManual } from './Manual/ManualContext';
 
 const SavedMessages = ({ onBack }) => {
+  const { startTour } = useManual();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      startTour('saved-messages');
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [startTour]);
+
   const savedMessages = [
     {
       sender: 'Alice',
@@ -28,11 +38,11 @@ const SavedMessages = ({ onBack }) => {
   return (
     <div className="view-container">
       <div className="view-header">
-        <button className="back-button" onClick={onBack}>&lt; Atrás</button>
+        <button className="back-button" onClick={onBack} data-tour-target="saved-back">&lt; Atrás</button>
         <h2 className="view-title">Mensajes Guardados</h2>
       </div>
       <div className="menu-view-content">
-        <div className="saved-messages-list">
+        <div className="saved-messages-list" data-tour-target="saved-list">
           {savedMessages.map((msg, index) => (
             <div key={index} className="saved-message-item">
               <img src={msg.avatar} alt={msg.sender} className="sender-avatar" />

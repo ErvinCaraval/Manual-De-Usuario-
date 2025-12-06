@@ -31,6 +31,18 @@ export const tours = {
             title: "Permitir Acceso",
             content: "Selecciona una opción para continuar y encontrar pares cercanos.",
             position: "top"
+        },
+        {
+            target: "location-once-btn",
+            title: "Solo esta vez",
+            content: "Permite el acceso solo por esta sesión.",
+            position: "top"
+        },
+        {
+            target: "location-deny-btn",
+            title: "No permitir",
+            content: "Deniega el acceso a la ubicación. Algunas funciones no estarán disponibles.",
+            position: "top"
         }
     ],
     "notification-permission": [
@@ -44,6 +56,12 @@ export const tours = {
             target: "notification-enable-btn",
             title: "Activar Notificaciones",
             content: "Haz clic para recibir alertas instantáneas de tus chats.",
+            position: "top"
+        },
+        {
+            target: "notification-deny-btn",
+            title: "Ahora no",
+            content: "Puedes activar las notificaciones más tarde en la configuración.",
             position: "top"
         }
     ],
@@ -59,6 +77,12 @@ export const tours = {
             title: "Activar Bluetooth",
             content: "Enciende el Bluetooth para unirte a la red y encontrar usuarios.",
             position: "top"
+        },
+        {
+            target: "bluetooth-skip-btn",
+            title: "Omitir",
+            content: "Puedes configurar el Bluetooth más tarde, pero no podrás ver usuarios cercanos.",
+            position: "top"
         }
     ],
     "battery-optimization": [
@@ -72,6 +96,18 @@ export const tours = {
             target: "battery-disable-btn",
             title: "Optimizar",
             content: "Desactiva la optimización de batería para asegurar que los mensajes lleguen siempre.",
+            position: "top"
+        },
+        {
+            target: "battery-check-btn",
+            title: "Verificar de nuevo",
+            content: "Comprueba si la configuración se aplicó correctamente.",
+            position: "top"
+        },
+        {
+            target: "battery-skip-btn",
+            title: "Omitir por ahora",
+            content: "Puedes ajustar esto después si notas problemas de conexión.",
             position: "top"
         }
     ],
@@ -139,6 +175,12 @@ export const tours = {
             position: "left"
         },
         {
+            target: "menu-help",
+            title: "Ayuda y Tutorial",
+            content: "Reinicia los tutoriales para aprender a usar la app.",
+            position: "left"
+        },
+        {
             target: "menu-darkmode",
             title: "Modo Oscuro",
             content: "Alterna entre el tema claro y oscuro para descansar tu vista.",
@@ -181,9 +223,21 @@ export const tours = {
             title: "Eliminar",
             content: "Borra a este usuario de tu lista de contactos.",
             position: "top"
+        },
+        {
+            target: "action-cancel",
+            title: "Cancelar",
+            content: "Cierra este menú sin realizar ninguna acción.",
+            position: "top"
         }
     ],
     "location-channels": [
+        {
+            target: "channels-close",
+            title: "Cerrar",
+            content: "Vuelve a la pantalla de chat.",
+            position: "bottom"
+        },
         {
             target: "channels-list",
             title: "Canales Geográficos",
@@ -199,6 +253,12 @@ export const tours = {
     ],
     "network-people": [
         {
+            target: "network-close",
+            title: "Cerrar",
+            content: "Vuelve a la pantalla de chat.",
+            position: "bottom"
+        },
+        {
             target: "network-map",
             title: "Mapa de Red",
             content: "Visualiza los dispositivos conectados a tu alrededor en tiempo real.",
@@ -208,6 +268,86 @@ export const tours = {
             target: "peer-node-0", // Assuming first peer
             title: "Usuarios",
             content: "Toca un usuario para ver detalles o chatear.",
+            position: "top"
+        }
+    ],
+    "settings": [
+        {
+            target: "settings-back",
+            title: "Atrás",
+            content: "Vuelve al menú principal.",
+            position: "bottom"
+        },
+        {
+            target: "settings-list",
+            title: "Opciones",
+            content: "Explora y ajusta las preferencias de la aplicación.",
+            position: "top"
+        }
+    ],
+    "user-profile": [
+        {
+            target: "profile-back",
+            title: "Atrás",
+            content: "Vuelve al menú principal.",
+            position: "bottom"
+        },
+        {
+            target: "profile-avatar-btn",
+            title: "Cambiar Avatar",
+            content: "Sube una nueva foto de perfil.",
+            position: "bottom"
+        },
+        {
+            target: "profile-name-input",
+            title: "Nombre",
+            content: "Edita tu nombre visible.",
+            position: "top"
+        },
+        {
+            target: "profile-bio-input",
+            title: "Biografía",
+            content: "Cuéntale a otros algo sobre ti.",
+            position: "top"
+        },
+        {
+            target: "profile-cancel-btn",
+            title: "Cancelar",
+            content: "Descarta los cambios realizados.",
+            position: "top"
+        },
+        {
+            target: "profile-save-btn",
+            title: "Guardar",
+            content: "Guarda los cambios en tu perfil.",
+            position: "top"
+        }
+    ],
+    "saved-messages": [
+        {
+            target: "saved-back",
+            title: "Atrás",
+            content: "Vuelve al menú principal.",
+            position: "bottom"
+        },
+        {
+            target: "saved-list",
+            title: "Mensajes",
+            content: "Aquí encontrarás todos tus mensajes guardados.",
+            position: "top"
+        }
+    ],
+    "chat-backgrounds": [
+        {
+            target: "backgrounds-back",
+            title: "Atrás",
+            content: "Vuelve al menú principal.",
+            position: "bottom"
+        },
+        {
+            target: "backgrounds-grid",
+            title: "Fondos",
+            content: "Selecciona un fondo para personalizar tus chats.",
             position: "top"
         }
     ]

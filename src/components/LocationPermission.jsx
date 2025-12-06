@@ -124,10 +124,10 @@ const LocationPermission = ({ onComplete }) => {
           <button className="action-button primary" onClick={() => handleComplete('granted')} data-tour-target="location-allow-btn">
             Mientras uso la app
           </button>
-          <button className="action-button" onClick={() => handleComplete('granted_once')}>
+          <button className="action-button" onClick={() => handleComplete('granted_once')} data-tour-target="location-once-btn">
             Solo esta vez
           </button>
-          <button className="action-button" onClick={() => handleComplete('denied')}>
+          <button className="action-button" onClick={() => handleComplete('denied')} data-tour-target="location-deny-btn">
             No permitir
           </button>
         </div>

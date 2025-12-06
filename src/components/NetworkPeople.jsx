@@ -51,7 +51,7 @@ const NetworkPeople = ({ showToast }) => {
       <div className="network-panel">
         <div className="network-header">
           <h2 className="network-title">MAPA DE LA RED</h2>
-          <button className="close-btn" onClick={() => navigate('/chat')}>×</button>
+          <button className="close-btn" onClick={() => navigate('/chat')} data-tour-target="network-close">×</button>
         </div>
 
         <div className="network-map-container">

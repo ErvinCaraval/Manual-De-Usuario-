@@ -103,7 +103,7 @@ const ContactActions = ({
         </div>
 
         <div className="sheet-footer">
-          <button className="sheet-cancel" onClick={onClose}>
+          <button className="sheet-cancel" onClick={onClose} data-tour-target="action-cancel">
             Cancelar
           </button>
         </div>

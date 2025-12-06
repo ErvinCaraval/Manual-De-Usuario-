@@ -52,7 +52,7 @@ const LocationChannels = ({ showToast }) => {
             </svg>
           </div>
           <h2 className="channels-title">location channels</h2>
-          <button className="close-btn" onClick={() => navigate('/chat')}>
+          <button className="close-btn" onClick={() => navigate('/chat')} data-tour-target="channels-close">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M18 6L6 18M6 6l12 12" stroke="var(--text-secondary)" strokeWidth="2" strokeLinecap="round" />
             </svg>
